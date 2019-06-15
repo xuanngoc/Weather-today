@@ -6,4 +6,11 @@
     <string name="action_settings">Setting</string>
     <string name="action_FAQ">FAQ</string>
 
+
+    <string name="atmospheric_pressure">Atmospheric pressure</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="precipitation_rain">Precipitation rain</string>
+    <string name="precipitation_snow">Precipitation snow</string>
+
 </resources>

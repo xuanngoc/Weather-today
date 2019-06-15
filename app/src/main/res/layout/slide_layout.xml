@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageStatusWeatherView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="0.2"
+            android:layout_gravity="center"
+            android:background="@mipmap/s10d"/>
+        <TextView
+            android:id="@+id/mainAndTempView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Cloudy 32	C"
+            style="@style/font"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/temp_minView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dp"
+                style="@style/font"
+                android:text="Low 29C"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/font"
+                android:text="|"/>
+            <TextView
+                android:id="@+id/temp_maxView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                style="@style/font"
+                android:text="High 37C"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/atmView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle"
+                    android:gravity="center"
+                    android:text="1,002mb"/>
+
+                <TextView
+                    android:id="@+id/humidityView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle"
+                    android:gravity="center"
+                    android:text="83%"/>
+                <TextView
+                    android:id="@+id/windView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/circle"
+                    android:gravity="center"
+                    android:text="6.9 mph"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3333"
+                    android:text="@string/atmospheric_pressure"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    style="@style/font"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3333"
+                    android:text="@string/humidity"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    style="@style/font"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3333"
+                    android:text="@string/wind"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    style="@style/font"  />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp">
+                <TextView
+                    android:id="@+id/sunsireView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="left"
+                    android:text="5:15 AM Sunrise"/>
+                <TextView
+                    android:id="@+id/sunsetView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="right"
+                    android:text="6:39 PM Sunset"/>
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="140dp"
+                        android:background="#2ecc71" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/haft_circle"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="20dp"
+                        />
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="140dp"
+                        android:background="#2ecc71" />
+                </LinearLayout>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</ScrollView>
+<!--
+ private String weatherMain;
+    private String weatherDescription;
+    private String weatherIcon;
+
+    //JSON root.main
+    private String temp;
+    private String pressure; -> circle
+    private String humidity; -> circle
+    private String temp_min;
+    private String temp_max;
+
+    //JSON root.wind
+    private String windSpeed;  -> circle
+
+    //JSON root.sys
+    private String country;
+    private String sunrise;
+    private String sunset;
+    //JSON cityID, city name,
+    private String cityID;
+    private String cityName;-->
