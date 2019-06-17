@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.app.LoaderManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -8,12 +7,14 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.app.LoaderManager;
 import android.content.Loader;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -24,14 +25,11 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity
-        implements LoaderManager.LoaderCallbacks<Weather> {
+
+public class MainActivity extends FragmentActivity
+        /*implements LoaderManager.LoaderCallbacks<Weather>*/ {
 
     public static LinearLayout rootLayout;
     private ViewPager mSlideViewPager;
@@ -47,22 +45,12 @@ public class MainActivity extends AppCompatActivity
             Color.MAGENTA
     };*/
 
-    private static final String USGS_REQUEST_URL =
+    /*private static final String USGS_REQUEST_URL =
             "https://api.openweathermap.org/data/2.5/weather?q=dong%20hoi&lang=vi&appid=f5a089622fc3d2c656b395aa84ba6b89";
 
-    private static final int WEATHER_LOADER_ID = 1;
+    private static final int WEATHER_LOADER_ID = 1;*/
 
-    /*private ImageView imageStatusWeather;
-    private TextView mainAndTempView;
-    private TextView temp_minView;
-    private TextView temp_maxView;
 
-    private TextView atmView;
-    private TextView humidityView;
-    private TextView windView;
-
-    private TextView sunsireView;
-    private TextView sunsetView;*/
 
 
 
@@ -71,15 +59,17 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         setTitle(null);
 
         rootLayout = findViewById(R.id.rootLayout);
         //rootLayout.setBackgroundColor(backgroundColor[3]);
 
         mSlideViewPager = findViewById(R.id.viewPager);
+
         mDotsLayout = findViewById(R.id.dots);
-        mSlideAdapter = new SlideAdapter(this);
+
+        mSlideAdapter = new SlideAdapter(getSupportFragmentManager(), new CityWeatherFragment() );
         mSlideViewPager.setAdapter(mSlideAdapter);
         addDotsIndicator(0);
         mSlideViewPager.addOnPageChangeListener(viewListener);
@@ -102,8 +92,8 @@ public class MainActivity extends AppCompatActivity
 */
 
 
-        LoaderManager loaderManager = getLoaderManager();
-        loaderManager.initLoader(WEATHER_LOADER_ID, null, this);
+        /*LoaderManager loaderManager = getLoaderManager();
+        loaderManager.initLoader(WEATHER_LOADER_ID, null, this);*/
     }
 
     public void addDotsIndicator(int pos) {
@@ -177,7 +167,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    @NonNull
+    /*@NonNull
     @Override
     public Loader<Weather> onCreateLoader(int i, @Nullable Bundle bundle) {
         // Create a new loader for the given URL
@@ -190,34 +180,12 @@ public class MainActivity extends AppCompatActivity
         Log.d("hello", "Loader");
 
         if(weather != null){
-            // Set image status weather
-            /*String icon = "01d";// weather.getWeatherIcon();
-
-            URL url = null;
-            try{
-                url = new URL("http://openweathermap.org/img/w/"+ icon +".png");
-            }catch (MalformedURLException e){
-                Log.e("URL", "Problem building the URL", e);
-            }
-
-            //URL url = new URL("http://image10.bizrate-images.com/resize?sq=60&uid=2216744464");
-            Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-            imageStatusWeather.setImageBitmap(bmp);*/
-
-            //Set main and temp
-            String weatherMain = weather.getWeatherMain();
-            double weatherTemp = weather.getTemp();
-            String mainAndTemp = weatherMain + " " + weatherTemp + Html.fromHtml("&#8451");
-            //mainAndTempView.setText("xxxxxxxxxxx");
-            Log.d("xxxxxx",weatherMain );
-            Log.d("xxxxxx", "" + weatherTemp);
-            Log.d("xxxxxxxx", mainAndTemp);
-
+            ///Fuck
         }
     }
 
     @Override
     public void onLoaderReset(@NonNull Loader<Weather> loader) {
 
-    }
+    }*/
 }

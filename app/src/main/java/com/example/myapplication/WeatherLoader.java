@@ -1,9 +1,8 @@
 package com.example.myapplication;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.content.AsyncTaskLoader;
+import android.support.v4.content.AsyncTaskLoader;
 
 
 public class WeatherLoader extends AsyncTaskLoader<Weather> {
@@ -11,7 +10,7 @@ public class WeatherLoader extends AsyncTaskLoader<Weather> {
     /** Query URL*/
     private String mUrl;
 
-    public WeatherLoader(@NonNull Context context, String url) {
+    public WeatherLoader( Context context, String url) {
         super(context);
         mUrl = url;
     }
