@@ -180,7 +180,7 @@ public class MainActivity extends FragmentActivity
         Log.d("hello", "Loader");
 
         if(weather != null){
-            ///Fuck
+            
         }
     }
 
